@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <title>예매 페이지</title>
+</head>
+<body>
+<div id="header-placeholder"></div> <!-- 헤더를 삽입할 공간 -->
+<div class="hi">안녕하세요</div>
+<div class="typing-effect">개쩌는 효과ㄷㄷ</div>
+<div class="nanum-gothic-coding-regular-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptuous.</div>
+<div class="about" id="about">
+  <div class="content">
+    <!-- 왼쪽 이미지 -->
+    <div>
+      <img src="img/main.png" alt="이미지 설명">
+    </div>
+    <!-- 오른쪽 About Me -->
+    <div class="about-me">
+      <h1>About Me</h1>
+      <p>어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@
+        어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@어쩌고 저쩌고 나중에 적을게요@@@@</p>
+      <button class="text-button active" onclick="showContent(1)">Skills</button>
+      <button class="text-button" onclick="showContent(2)">Educations</button>
+      <button class="text-button" onclick="showContent(3)">Certifications</button>
+
+      <div id="content"></div>
+
+    </div>
+  </div>
+</div>
+
+<div id="projects" class="projects">
+  <h2>Projects</h2>
+  <button onclick="filterSelection('all')">ALL</button>
+  <button onclick="filterSelection('web')">Web</button>
+
+  <div class="project-item web">
+    <img src="img/테스트용.jpeg" alt="Web Project 1">
+    <p>1번 테스트 켘ㅋㅋ</p>
+  </div>
+
+  <div class="project-item web">
+    <img src="img/테스트용2.png" alt="Web Project 2">
+    <p>2번 테스트 ㅋㅋ컄캬</p>
+  </div>
+
+  <!-- 추가적인 프로젝트 아이템들 -->
+
+</div>
+
+<script src="js/content.js"></script>
+</body>
+</html>

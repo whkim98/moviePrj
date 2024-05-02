@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class MySqlConnect {
 
 	static final String MYSQL_DRIVER="com.mysql.cj.jdbc.Driver";
-	static final String MYSQL_URL="jdbc:mysql://localhost:3306/bit801?serverTimezone=Asia/Seoul";
+	static final String MYSQL_URL="jdbc:mysql://localhost:3306/moviePrj?serverTimezone=Asia/Seoul";
 	static final String USERNAME="root";
 	static final String PASSWORD="dnehd1008@";
 	

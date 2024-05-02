@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* CSS */
+body {
+  background-color: black;
+}
+
+.hi {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 40px;
+  color: aliceblue;
+  align-items: center;
+  margin: 10px;
+}
+
+.nanum-gothic-coding-regular-sub {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.typing-effect {
+  margin: 10px;
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 80px;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 5s steps(13, end) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 20%;
+  }
+  40% {
+    width: 40%;
+  }
+  60% {
+    width: 100%;
+  }
+  80% {
+    width: 40%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* 화면 전체 높이에 컨텐츠를 가운데 정렬하기 위해 */
+}
+
+.content {
+  color: aliceblue;
+  margin: 30px;
+  display: flex;
+  align-items: center; /* 가운데 정렬 */
+  gap: 20px;
+  max-width: 800px; /* 컨텐츠 최대 너비 지정 */
+}
+
+.about img {
+  max-width: 530px; /* 이미지의 최대 너비 지정 */
+}
+
+.about-me {
+  flex: 1; /* 남은 공간을 채우도록 설정 */
+  text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.about button {
+  background-color: transparent; /* 배경색 투명으로 설정 */
+  border: none; /* 테두리 제거 */
+  cursor: pointer; /* 마우스 포인터 모양 변경 */
+  color: inherit; /* 상속된 텍스트 색상 사용 */
+  font-size: inherit; /* 상속된 폰트 크기 사용 */
+  padding: 0; /* 내부 여백 제거 */
+  margin: 0; /* 마진 제거 */
+}
+
+.about button:hover {
+  /* 마우스 오버 시 적용될 스타일 */
+  /* 예를 들어 배경색과 텍스트 색상을 변경할 수 있습니다. */
+  color: green;
+}
+
+.bar {
+  height: 10px; /* 막대의 높이 */
+  background-color: purple; /* 막대의 색상 */
+  margin-top: 10px; /* 막대 위 여백 */
+}
+
+.projects {
+  margin: 20px;
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.projects h2 {
+  color: aliceblue; /* 제목 색상 */
+  font-size: 40px;
+}
+
+.projects button {
+  margin: 0 10px; /* 버튼 간격 */
+  padding: 10px 20px; /* 버튼 내부 여백 */
+  background-color: transparent; /* 배경색 투명으로 설정 */
+  border: 2px solid #fff; /* 테두리를 흰색으로 설정 */
+  cursor: pointer; /* 커서 모양 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  font-size: 16px; /* 폰트 크기 */
+  border-radius: 50px; /* 타원형 모양으로 만들기 위한 값 */
+}
+
+.projects button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* 호버시 배경색 변경 */
+}
+
+.project-item {
+  display: block;
+  color: white; /* 모든 프로젝트 아이템의 글자색을 흰색으로 지정 */
+  max-width: 300px; /* 이미지의 최대 너비를 조절하세요 */
+  overflow: hidden; /* 이미지가 너무 커서 부모 요소를 넘어가지 않도록 설정 */
+  margin: 0 auto; /* 가로 중앙 정렬 */
+}
+
+.project-item img {
+  margin: 20px;
+  width: 100%; /* 이미지를 부모 요소의 너비에 맞게 조정 */
+  height: auto; /* 가로 비율에 맞게 세로 비율 자동 조정 */
+}
+
+.project-item.web {
+  display: none;
+}
+
+.contentLi{
+  text-align: left;
+}
+
+.text-button.active{
+  color: green;
+}
