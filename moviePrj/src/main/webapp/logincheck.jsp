@@ -9,7 +9,7 @@
     UserDto dto = new UserDto();
     UserDao dao = new UserDao();
 
-    if(dao.loginCheck(user_id, user_password)){
+    if(dao.loginCheck(user_id, user_password, request)){
         response.sendRedirect("main.jsp");
     } else {
 %>
