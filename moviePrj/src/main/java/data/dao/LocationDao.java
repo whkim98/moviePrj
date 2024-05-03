@@ -41,5 +41,32 @@ public class LocationDao {
 		}
 		return list;
 	}
+	
+	public String locationDetail(int location_no) {
+		LocationDto dto = new LocationDto();
+		String sql = """
+				SELECT CONCAT(ml.location_city, ' ', ml.location_detail) 
+				AS city_detail
+				, location_no
+				FROM mov_location ml where location_no = ?
+				""";
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, location_no);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto.setLocation_no(rs.getInt("location_no"));
+				dto.setLocation_detail(rs.getString("city_detail"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		return dto.getLocation_detail();
+	}
 
 }

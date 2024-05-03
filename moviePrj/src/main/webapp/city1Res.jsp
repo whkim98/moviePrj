@@ -86,8 +86,13 @@ List<TimeDto> listT = daoT.allTime(info_no);
 						</select></td>
 					</tr>
 				</thead>
+				<tr>
+				<td colspan="2">
+				<input type="submit" value="확인">
+				</td>
+				</tr>
 			</table>
-
+			
 		</div>
 
 		<script>

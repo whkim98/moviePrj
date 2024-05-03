@@ -11,6 +11,10 @@ public class SitDto {
 		this.sit_name = sit_name;
 	}
 
+	public SitDto() {
+		
+	}
+	
 	public int getSit_no() {
 		return sit_no;
 	}
