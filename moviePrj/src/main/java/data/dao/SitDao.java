@@ -38,5 +38,31 @@ public class SitDao {
 		}
 		return list;
 	}
+	
+	public int getSitNo(String seatName) {
+		SitDto dto = new SitDto();
+		String sql = """
+				select sit_no from mov_sit where sit_name = ?
+				""";
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, seatName);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto.setSit_no(rs.getInt("sit_no"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		return dto.getSit_no();
+	}
+	
+	
 
 }

@@ -36,7 +36,7 @@ TimeDao daoT = new TimeDao();
 List<TimeDto> listT = daoT.allTime(info_no);
 %>
 <body style="background-color: black;">
-	<form action="./selectSit.jsp" method="post">
+	<form action="./selectSit.jsp?info_no=<%=info_no %>" method="post">
 		<table class="table">
 			<thead class="table-dark">
 				<tr>

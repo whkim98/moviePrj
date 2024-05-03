@@ -27,6 +27,10 @@ public class InfoDto {
 		this.info_description = info_description;
 		this.location_no = location_no;
 	}
+	
+	public InfoDto() {
+		
+	}
 
 	public int getInfo_no() {
 		return info_no;

@@ -24,7 +24,7 @@
     // Get parameters from request
     int location_no = Integer.parseInt(request.getParameter("location_no"));
     int time_no = Integer.parseInt(request.getParameter("time_no"));
-    
+    int info_no = Integer.parseInt(request.getParameter("info_no"));
     // Instantiate DAOs
     LocationDao dao = new LocationDao();
     TimeDao daoT = new TimeDao();
@@ -63,20 +63,21 @@
     </table>
 
     <script>
-        function confirmReservation(seatName) {
-            // Show confirmation dialog
-            var confirmation = confirm('선택한 좌석을 예약하시겠습니까?');
-            // If user confirms reservation
-            if (confirmation) {
-                // Construct URL with seat information
-                var url = './confirmRes.jsp?location_no=<%=location_no%>&time_no=<%=time_no%>&seat_name=' + seatName;
-                // Redirect to reservation page
-                window.location.href = url;
-            } else {
-                // If user cancels, do nothing
-                return;
-            }
+    function confirmReservation(seatName) {
+        // Show confirmation dialog
+        var confirmation = confirm('선택한 좌석을 예약하시겠습니까?');
+        // If user confirms reservation
+        if (confirmation) {
+            // Construct URL with seat information
+            var url = './confirmRes.jsp?info_no=<%=info_no %>&location_no=<%=location_no%>&time_no=<%=time_no%>&seat_name=' + seatName;
+            // Redirect to reservation page
+            window.location.href = url;
+        } else {
+            // If user cancels, do nothing
+            return;
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>

@@ -25,6 +25,7 @@
 						<h6 class="mb-0 pb-3">
 							<span>로그인</span><span>회원가입</span>
 						</h6>
+						
 						<input class="checkbox" type="checkbox" id="reg-log"
 							name="reg-log" /> <label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
