@@ -13,6 +13,10 @@ public class LocationDto {
 		this.location_detail = location_detail;
 	}
 	
+	public LocationDto() {
+		
+	}
+	
 	public LocationDto(int location_no, String location_city) {
 		super();
 		this.location_no = location_no;

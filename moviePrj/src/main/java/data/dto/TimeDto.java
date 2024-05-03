@@ -14,6 +14,10 @@ public class TimeDto {
 		this.info_no = info_no;
 		this.time_time = time_time;
 	}
+	
+	public TimeDto() {
+		
+	}
 
 	public int getTime_no() {
 		return time_no;

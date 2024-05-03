@@ -6,13 +6,15 @@ public class ResDto {
 	private int user_no;
 	private int time_no;
 	private int sit_no;
+	private int info_no;
 	
-	public ResDto(int res_no, int user_no, int time_no, int sit_no) {
+	public ResDto(int res_no, int user_no, int time_no, int sit_no, int info_no) {
 		super();
 		this.res_no = res_no;
 		this.user_no = user_no;
 		this.time_no = time_no;
 		this.sit_no = sit_no;
+		this.info_no = info_no;
 	}
 
 	public int getRes_no() {
@@ -45,6 +47,14 @@ public class ResDto {
 
 	public void setSit_no(int sit_no) {
 		this.sit_no = sit_no;
+	}
+
+	public int getInfo_no() {
+		return info_no;
+	}
+
+	public void setInfo_no(int info_no) {
+		this.info_no = info_no;
 	}
 
 }
