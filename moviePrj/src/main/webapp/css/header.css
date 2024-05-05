@@ -1,16 +1,20 @@
 @charset "UTF-8";
 
+
+
 body {
   margin-top: 50px; /* 헤더와 컨텐츠 사이의 간격을 조정 */
+  padding-top: 50px;
 }
 
+
 .nanum-gothic-coding-regular {
-  background-color: rgba(0, 0, 0, 0.5); /* 검은색(0, 0, 0)의 투명도를 50%로 설정 */
+  background-color: rgba(0, 0, 0, 0.2); /* 검은색(0, 0, 0)의 투명도를 50%로 설정 */
   font-family: "Nanum Gothic Coding", monospace;
   font-weight: bold;
   font-style: normal;
   font-size: 40px;
-  color: aliceblue;
+  color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;

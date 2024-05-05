@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import data.dto.UserDto;
 import db.common.MySqlConnect;
@@ -15,34 +16,37 @@ public class UserDao {
 	MySqlConnect db = new MySqlConnect();
 	
 	public boolean loginCheck(String user_id, String user_password, HttpServletRequest request) {
-		UserDto dto = new UserDto();
-		Connection conn = db.getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		boolean check = true;
-		System.out.println(user_id);
-		System.out.println(user_password);
-		String sql = "select user_no from mov_user where user_id=? and user_password=?";
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user_id);
-			pstmt.setString(2, user_password);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				dto.setUser_no(rs.getInt("user_no"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			db.dbClose(rs, pstmt, conn);
-		}
-		
-		if(dto.getUser_no() == 0) {
-		    check = false;
-		}
-		request.getSession().setAttribute("user_no", dto.getUser_no());
-		return check;
+	    UserDto dto = new UserDto();
+	    Connection conn = db.getConnection();
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    boolean check = true;
+	    System.out.println(user_id);
+	    System.out.println(user_password);
+	    String sql = "select user_no from mov_user where user_id=? and user_password=?";
+	    
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, user_id);
+	        pstmt.setString(2, user_password);
+	        rs = pstmt.executeQuery();
+	        if(rs.next()) {
+	            dto.setUser_no(rs.getInt("user_no"));
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }finally {
+	        db.dbClose(rs, pstmt, conn);
+	    }
+	    
+	    if(dto.getUser_no() == 0) {
+	        check = false;
+	    }
+	    HttpSession session = request.getSession();
+	    // 세션의 유효 시간을 30분으로 설정
+	    session.setMaxInactiveInterval(30 * 60); // 30분 * 60초
+	    session.setAttribute("user_no", dto.getUser_no());
+	    return check;
 	}
 	
 	public void insertUser(UserDto dto) {
@@ -69,6 +73,27 @@ public class UserDao {
 		}finally {
 			db.dbClose(pstmt, conn);
 		}
+	}
+	
+	public UserDto myInfo(int user_no) {
+		UserDto dto = new UserDto();
+		String sql = "select * from mov_user where user_no=?";
+		Connection conn = db.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		System.out.println(user_no);
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, user_no);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto.setUser_no(rs.getInt("user_no"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return dto;
 	}
 
 }

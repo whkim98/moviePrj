@@ -34,7 +34,7 @@
 								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-											<h4 class="mb-4 pb-3">로그인</h4>
+											<h4 class="mb-4 pb-3">우플릭스 로그인</h4>
 											<form action="./logincheck.jsp" method="post" name="logincheck">
 												<div class="form-group">
 													<input type="text" name="user_id" class="form-style"
