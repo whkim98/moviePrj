@@ -55,7 +55,8 @@
 %>
 <body style="background-image: url('img/background.png'); background-size: cover;">
 
-
+<form action="./updateInfo.jsp" method="post">
+<input type="hidden" name="user_no" value="<%=dto.getUser_no() %>">
 <table class="table table-dark table-borderless" style="opacity: 0.7; width: 50%;">
   <thead>
     <tr>
@@ -68,7 +69,11 @@
     </tr>
     <tr>
       <th scope="col">이름</th>
-      <td><%=dto.getUser_name() %></td>
+      <td><input type="text" name="user_name" value="<%=dto.getUser_name() %>"></td>
+    </tr>
+    <tr>
+      <th scope="col">비밀번호</th>
+      <td><input type="password" name="user_password" value="<%=dto.getUser_password() %>"></td>
     </tr>
     <tr>
       <th scope="col">주소</th>
@@ -76,22 +81,15 @@
     </tr>
     <tr>
       <th scope="col">전화번호</th>
-      <td><%=dto.getUser_phone() %></td>
+      <td><input type="text" name="user_phone" value="<%=dto.getUser_phone() %>"></td>
     </tr>
   </thead>
   <tr>
   	<td colspan="2" align="center">
-	<button class="info-button" 
-	onclick="infoWindow('./checkPassword.jsp?user_no=<%= session.getAttribute("user_no") %>')">
-	정보수정</button>
+  	<input type="submit" value="수정">
   	</td>
   </tr>
 </table>
-
+</form>
 </body>
-<script>
-function infoWindow(url) {
-  window.open(url, "_blank", "width=600,height=400");
-}
-</script>
 </html>

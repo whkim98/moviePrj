@@ -19,7 +19,7 @@
 
 	<div id="header-placeholder"></div>
 	<div class="typing-effect" style="color: red;">우플릭스</div>
-	<div class="nanum-gothic-coding-regular-sub">WOOFLIX</div>
+	<div class="nanum-gothic-coding-regular-sub" style="margin-left: 50px;">WOOFLIX</div>
 
 	<div class="content" id="contents">
 		<div class="image-size">

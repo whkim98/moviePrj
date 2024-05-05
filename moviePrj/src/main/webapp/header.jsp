@@ -15,15 +15,20 @@ function userInfo() {
     var user_no = '<%= session.getAttribute("user_no") %>';
     location.href = './myInfo.jsp?user_no=' + user_no;
 }
+
+function reviewBoard(){
+	var user_no = '<%= session.getAttribute("user_no") %>';
+    location.href = './reviewBoard.jsp?user_no=' + user_no;
+}
 </script>
 
 <body>
   <header class="nanum-gothic-coding-regular">
-    <div>WOOFLIX</div>
+    <div style="margin-left: 20px;">WOOFLIX</div>
     <ul>
       <li><a href="main.jsp#contents">Contents</a></li>
       <li><a href="#" onclick="userInfo()">My Info</a></li>
-      <li><a href="">Reviews</a></li>
+      <li><a href="#" onclick="reviewBoard()">Reviews</a></li>
     </ul>
     
   </header>
