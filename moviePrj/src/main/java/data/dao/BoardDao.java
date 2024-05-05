@@ -111,7 +111,6 @@ MySqlConnect db = new MySqlConnect();
         return totalCount;
     }
 
-    // 페이지에 해당하는 글 목록을 가져오는 메소드
     public List<BoardDto> getListByPage(int currentPage, int pageSize) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -119,7 +118,6 @@ MySqlConnect db = new MySqlConnect();
         List<BoardDto> list = new ArrayList<>();
         try {
             conn = db.getConnection();
-            // MySQL의 LIMIT을 사용하여 특정 범위의 글 목록을 가져옵니다.
             String sql = "SELECT * FROM mov_board mb left join mov_user mu on mb.user_no = mu.user_no left join mov_info mi on mb.info_no = mi.info_no ORDER BY board_no asc LIMIT ?, ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, (currentPage - 1) * pageSize);

@@ -30,28 +30,26 @@
 <title>게시판</title>
 </head>
 <style>
-/* 테이블 헤더를 고정하기 위한 스타일 */
 .table-fixed thead {
 	position: sticky;
 	top: 0;
 	z-index: 1;
-	background-color: #fff; /* 선택적으로 배경색 지정 */
+	background-color: #fff; 
 }
 
 .info-button {
-	background-color: transparent; /* 배경을 투명하게 설정 */
-	border: 1px solid white; /* 테두리를 흰색으로 설정 */
-	color: white; /* 글자 색상을 흰색으로 설정 */
-	padding: 10px 20px; /* 버튼 내부 여백 설정 */
-	cursor: pointer; /* 커서를 포인터로 변경하여 버튼임을 나타냄 */
+	background-color: transparent;
+	border: 1px solid white; 
+	color: white; 
+	padding: 10px 20px; 
+	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s;
-	/* 부드러운 전환 효과를 위한 transition 속성 추가 */
 	border-radius: 10px;
 }
 
 .info-button:hover {
-	background-color: white; /* 마우스 오버시 배경을 흰색으로 전환 */
-	color: black; /* 마우스 오버시 글자 색상을 검정색으로 전환 */
+	background-color: white; 
+	color: black; 
 }
 </style>
 <%
@@ -79,7 +77,7 @@
 			<tr>
 				<th>영화선택</th>
 				<td colspan="3"><img src="img/범죄도시1.jpg" class="info_no"
-					style="width: 100px;"> <!-- 초기에는 빈 이미지 --> <select
+					style="width: 100px;"> <select
 					name="info_no" id="info_no">
 						<% for(int i=1; i<=4; i++) { %>
 						<option value="<%=i%>">범죄도시<%=i%></option>
@@ -89,7 +87,7 @@
             $("#info_no").change(function(){
                 let value = $(this).val();
                 let src = "img/범죄도시" + value + ".jpg";
-                $(".info_no").attr("src", src); // 이미지의 소스를 변경
+                $(".info_no").attr("src", src);
             });
         });
     </script></td>

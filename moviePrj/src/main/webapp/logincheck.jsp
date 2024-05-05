@@ -15,7 +15,7 @@
 %>
         <script>
             alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-            history.back(); // 이전 페이지로 이동
+            history.back(); 
         </script>
 <%
     }

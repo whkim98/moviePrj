@@ -12,7 +12,7 @@
 %>
     <script>
         alert("비밀번호가 일치합니다!");
-        window.close(); // 현재 창 닫기
+        window.close(); 
         window.opener.location.href = "./updateForm.jsp?user_no=<%=user_no %>";
     </script>
 <%

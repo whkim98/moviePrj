@@ -84,7 +84,6 @@
 													var userInput = document
 															.getElementById("user_addr1");
 
-													// input 요소를 클릭했을 때 searchAddr() 함수를 호출하도록 이벤트 리스너를 추가합니다.
 													userInput.addEventListener(
 															"click",
 															function() {
@@ -96,10 +95,6 @@
 																{
 																	oncomplete : function(
 																			data) {
-																		// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-																		// 각 주소의 노출 규칙에 따라 주소를 조합한다.
-																		// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
 																		var addr = ''; // 주소 변수
 																		var extraAddr = ''; // 참고항목 변수
 

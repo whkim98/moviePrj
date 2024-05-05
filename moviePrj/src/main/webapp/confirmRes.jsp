@@ -28,9 +28,7 @@
 %>
 <body>
     <script>
-        // Show confirmation message
         alert("예약이 완료되었습니다.");
-        // Redirect user to another page
         window.location.href = "reservationComplete.jsp";
     </script>
 </body>
