@@ -47,11 +47,6 @@ public class ResDao {
 
 	public ResDto confirmRes(HttpServletRequest request) {
 		ResDto dto = new ResDto();
-		UserDto udto = new UserDto();
-		TimeDto tdto = new TimeDto();
-		SitDto sdto = new SitDto();
-		InfoDto idto = new InfoDto();
-		LocationDto ldto = new LocationDto();
 		String sql = """
 				select mu.user_name, mt.time_time, ms.sit_name, 
 				mi.info_title, mi.info_img, 
@@ -59,15 +54,13 @@ public class ResDao {
 				AS city_detail from mov_res mr left join mov_user mu on mr.user_no = mu.user_no 
 				left join mov_time mt on mr.time_no = mt.time_no left join mov_sit ms on mr.sit_no = ms.sit_no 
 				left join mov_info mi on mr.info_no = mi.info_no left join mov_location ml on mr.location_no = ml.location_no
-				where mu.user_no = ?
+				ORDER BY res_no DESC LIMIT 1
 				""";
-		int user_no = (int) request.getSession().getAttribute("user_no");
 		Connection conn = db.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, user_no);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				dto.setUser_name(rs.getString("mu.user_name"));

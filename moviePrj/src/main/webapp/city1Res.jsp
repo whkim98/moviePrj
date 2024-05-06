@@ -35,6 +35,32 @@ List<LocationDto> list = dao.allLocation();
 TimeDao daoT = new TimeDao();
 List<TimeDto> listT = daoT.allTime(info_no);
 %>
+<style>
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* 호버 스타일 */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* 액티브 스타일 */
+input[type="submit"]:active {
+  background-color: #3e8e41;
+  transform: translateY(2px); /* 클릭 효과를 줍니다. */
+}
+</style>
 <body style="background-color: black;">
 	<form action="./selectSit.jsp?info_no=<%=info_no %>" method="post">
 		<table class="table">

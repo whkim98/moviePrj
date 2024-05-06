@@ -111,19 +111,23 @@ $(document).ready(function() {
     $(".board-title").click(function() {
         var boardNo = $(this).data("board-no"); 
         
-        $.ajax({
-            type: "POST", 
-            url: "updateHit.jsp", 
-            data: { board_no: boardNo }, 
-            success: function(response) {
-                $(".board-hit").filter(function() {
-                    return $(this).closest("tr").find(".board-title").data("board-no") === boardNo;
-                }).text(response.updatedHitCount);
-            },
-            error: function(xhr, status, error) {
-                console.error("Error occurred while updating hit count:", error);
-            }
-        });
+        var contentVisible = $(this).closest("tr").next(".board-content").is(":visible");
+
+        if (!contentVisible) {
+            $.ajax({
+                type: "POST", 
+                url: "updateHit.jsp", 
+                data: { board_no: boardNo }, 
+                success: function(response) {
+                    $(".board-hit").filter(function() {
+                        return $(this).closest("tr").find(".board-title").data("board-no") === boardNo;
+                    }).text(response.updatedHitCount);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error occurred while updating hit count:", error);
+                }
+            });
+        }
 
         $(this).closest("tr").next(".board-content").slideToggle();
     });

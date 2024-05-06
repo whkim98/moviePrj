@@ -36,6 +36,33 @@
 
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 %>
+<style>
+.reserve-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+/* 호버 스타일 */
+.reserve-button:hover {
+  background-color: #45a049;
+}
+
+/* 액티브 스타일 */
+.reserve-button:active {
+  background-color: #3e8e41;
+  transform: translateY(2px); /* 클릭 효과를 줍니다. */
+}
+</style>
 <body style="background-color: black;">
     <table class="table">
         <thead class="table-dark">
