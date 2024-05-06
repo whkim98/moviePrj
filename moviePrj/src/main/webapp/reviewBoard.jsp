@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link
     href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
     rel="stylesheet">
@@ -89,22 +90,24 @@
     </tbody>
 </table>
 
-<div class="pagination" style="text-align: center;">
+<div class="pagination d-flex justify-content-center"> 
     <% if (currentPage > 1) { %>
-        <a href="?user_no=<%= user_no %>&page=<%= currentPage - 1 %>" class="btn btn-secondary">이전</a>
+        <a href="?user_no=<%= user_no %>&page=<%= currentPage - 1 %>" class="btn btn-secondary me-2">이전</a> 
     <% } %>
     <% for (int i = 1; i <= totalPage; i++) { %>
         <% if (i == currentPage) { %>
-            <a href="#" class="btn btn-primary disabled"><%= i %></a>
+            <a href="#" class="btn btn-primary disabled me-2"><%= i %></a>
         <% } else { %>
-            <a href="?user_no=<%= user_no %>&page=<%= i %>" class="btn btn-primary"><%= i %></a>
+            <a href="?user_no=<%= user_no %>&page=<%= i %>" class="btn btn-primary me-2"><%= i %></a>
         <% } %>
     <% } %>
     
     <% if (currentPage < totalPage) { %>
-        <a href="?user_no=<%= user_no %>&page=<%= currentPage + 1 %>" class="btn btn-secondary">다음</a>
+        <a href="?user_no=<%= user_no %>&page=<%= currentPage + 1 %>" class="btn btn-secondary me-2">다음</a>
     <% } %>
 </div>
+
+
 
 <script type="text/javascript">
 $(document).ready(function() {
