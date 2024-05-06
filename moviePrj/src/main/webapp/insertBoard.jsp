@@ -34,73 +34,76 @@
 	position: sticky;
 	top: 0;
 	z-index: 1;
-	background-color: #fff; 
+	background-color: #fff;
 }
 
 .info-button {
 	background-color: transparent;
-	border: 1px solid white; 
-	color: white; 
-	padding: 10px 20px; 
+	border: 1px solid white;
+	color: white;
+	padding: 10px 20px;
 	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s;
 	border-radius: 10px;
 }
 
 .info-button:hover {
-	background-color: white; 
-	color: black; 
+	background-color: white;
+	color: black;
 }
 </style>
 <%
-    int user_no = Integer.parseInt(request.getParameter("user_no"));
-    
-    UserDao udao = new UserDao();
-    UserDto udto = udao.myInfo(user_no);
+int user_no = Integer.parseInt(request.getParameter("user_no"));
+
+UserDao udao = new UserDao();
+UserDto udto = udao.myInfo(user_no);
 %>
 <body
 	style="background-image: url('img/background.png'); background-size: cover;">
 	<form action="./boardInsertAction.jsp" method="post">
-	<input type="hidden" name = "user_no" value="<%=user_no %>">
-	<table class="table table-dark table-borderless" style="opacity: 0.7;">
-		<thead>
-			<tr>
-				<th scope="col">제목</th>
-				<td><input type="text" name="board_title"></td>
-				<th scope="col">작성자</th>
-				<td><%=udto.getUser_id() %></td>
-			</tr>
-			<tr>
-				<th scope="col">내용</th>
-				<td colspan="3"><textarea name="board_content" rows="4" cols="50"></textarea></td>
-			</tr>
-			<tr>
-				<th>영화선택</th>
-				<td colspan="3"><img src="img/범죄도시1.jpg" class="info_no"
-					style="width: 100px;"> <select
-					name="info_no" id="info_no">
-						<% for(int i=1; i<=4; i++) { %>
-						<option value="<%=i%>">범죄도시<%=i%></option>
-						<% } %>
-				</select> <script type="text/javascript">
-        $(document).ready(function() {
-            $("#info_no").change(function(){
-                let value = $(this).val();
-                let src = "img/범죄도시" + value + ".jpg";
-                $(".info_no").attr("src", src);
-            });
-        });
-    </script></td>
-			</tr>
-			<tr>
-			<td colspan="3" align="center">
-			<input type="submit" value="글쓰기"></td>
-			</tr>
-		</thead>
-		<tbody>
+		<input type="hidden" name="user_no" value="<%=user_no%>">
+		<table class="table table-dark table-borderless" style="opacity: 0.7;">
+			<thead>
+				<tr>
+					<th scope="col">제목</th>
+					<td><input type="text" name="board_title"> 작성자 | <b>
+							<%=udto.getUser_id()%></b></td>
+				</tr>
+				<tr>
+					<th scope="col">내용</th>
+					<td colspan="3"><textarea name="board_content" rows="4"
+							cols="50"></textarea></td>
+				</tr>
+				<tr>
+					<th>영화선택</th>
+					<td colspan="3"><img src="img/범죄도시1.jpg" class="info_no"
+						style="width: 100px;"> <select name="info_no" id="info_no">
+							<%
+							for (int i = 1; i <= 4; i++) {
+							%>
+							<option value="<%=i%>">범죄도시<%=i%></option>
+							<%
+							}
+							%>
+					</select> <script type="text/javascript">
+						$(document).ready(function() {
+							$("#info_no").change(function() {
+								let value = $(this).val();
+								let src = "img/범죄도시" + value + ".jpg";
+								$(".info_no").attr("src", src);
+							});
+						});
+					</script></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><input type="submit"
+						value="글쓰기"></td>
+				</tr>
+			</thead>
+			<tbody>
 
-		</tbody>
-	</table>
+			</tbody>
+		</table>
 	</form>
 </body>
 </html>
