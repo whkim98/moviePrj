@@ -127,7 +127,7 @@ $(document).ready(function() {
                     }).text(response.updatedHitCount);
                 },
                 error: function(xhr, status, error) {
-                    console.error("Error occurred while updating hit count:", error);
+                    console.error("Error hit count:", error);
                 }
             });
         }

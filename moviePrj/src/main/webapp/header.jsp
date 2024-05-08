@@ -11,7 +11,7 @@
 </head>
 <body>
 <header class="nanum-gothic-coding-regular">
-    <div style="margin-left: 20px;">WOOFLIX</div>
+    <div style="margin-left: 20px;">WOOGABOX</div>
     <ul>
         <li><a href="main.jsp#contents">Contents</a></li>
         <li><a href="#" onclick="userInfo()">My Info</a></li>

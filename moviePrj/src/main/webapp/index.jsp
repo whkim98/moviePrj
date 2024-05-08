@@ -25,7 +25,6 @@
 						<h6 class="mb-0 pb-3">
 							<span>로그인</span><span>회원가입</span>
 						</h6>
-						
 						<input class="checkbox" type="checkbox" id="reg-log"
 							name="reg-log" /> <label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
@@ -34,7 +33,7 @@
 								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
-											<h4 class="mb-4 pb-3">우플릭스 로그인</h4>
+											<h4 class="mb-4 pb-3" >우가박스 로그인</h4>
 											<form action="./logincheck.jsp" method="post" name="logincheck">
 												<div class="form-group">
 													<input type="text" name="user_id" class="form-style"
