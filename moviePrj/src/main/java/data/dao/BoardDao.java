@@ -128,6 +128,7 @@ MySqlConnect db = new MySqlConnect();
                 board.setBoard_no(rs.getInt("board_no"));
                 board.setBoard_title(rs.getString("board_title"));
                 board.setUser_id(rs.getString("user_id"));
+                board.setUser_id(rs.getString("user_id"));
                 board.setInfo_title(rs.getString("info_title"));
                 board.setBoard_hit(rs.getInt("board_hit"));
                 board.setBoard_content(rs.getString("board_content"));

@@ -49,6 +49,37 @@ public class UserDao {
 	    return check;
 	}
 	
+	public String userName(String user_id, String user_password, HttpServletRequest request) {
+		UserDto dto = new UserDto();
+	    Connection conn = db.getConnection();
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    String user_name = "";
+	    System.out.println(user_id);
+	    System.out.println(user_password);
+	    String sql = "select user_name from mov_user where user_id=? and user_password=?";
+	    
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, user_id);
+	        pstmt.setString(2, user_password);
+	        rs = pstmt.executeQuery();
+	        if(rs.next()) {
+	            dto.setUser_name(rs.getString("user_name"));
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }finally {
+	        db.dbClose(rs, pstmt, conn);
+	    }
+	    user_name = dto.getUser_name();
+	    HttpSession session = request.getSession();
+	    // 세션의 유효 시간을 30분으로 설정
+	    session.setMaxInactiveInterval(30 * 60); // 30분 * 60초
+	    session.setAttribute("user_name", dto.getUser_name());
+	    return user_name;
+	}
+	
 	public void insertUser(UserDto dto) {
 		String sql = """
 				insert into mov_user(user_id, user_password, user_name, user_addr1, user_addr2, 

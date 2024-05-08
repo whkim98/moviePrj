@@ -62,12 +62,25 @@
   background-color: #3e8e41;
   transform: translateY(2px); /* 클릭 효과를 줍니다. */
 }
+
+.screen-box {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center; /* 텍스트를 중앙에 배치합니다. */
+    margin-bottom: 20px; /* 화면 아래 여백을 추가합니다. */
+}
 </style>
 <body style="background-color: black;">
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <th colspan="10"><%=location_detail %> (<%=sdf.format(time_time) %>)좌석선택</th>
+                <th colspan="10">
+                    <div class="screen-box">
+                        <span style="color: white; font-size: 20px;">Screen 위치임 ㅋㅋ</span>
+                    </div>
+                </th>
             </tr>
         </thead>
         <tbody>
